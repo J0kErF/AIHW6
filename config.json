@@ -1,0 +1,78 @@
+{
+  "identity": {
+    "group_name": "moamteam",
+    "students": ["Mohammad Yosef ([REDACTED])", "Amear Abu Farekh ([REDACTED])"],
+    "github_repo": "https://github.com/J0kErF/AIHW6",
+    "timezone": "Asia/Jerusalem"
+  },
+  "grid_size": [5, 5],
+  "max_moves": 25,
+  "num_games": 6,
+  "max_barriers": 5,
+  "scoring": {
+    "cop_win": 20,
+    "thief_win": 10,
+    "cop_loss": 5,
+    "thief_loss": 5
+  },
+  "turn_order_first": "thief",
+  "start_positions": {
+    "mode": "random",
+    "fixed_cop": [0, 0],
+    "fixed_thief": [4, 4]
+  },
+  "observation": {
+    "vision_radius": 2
+  },
+  "illegal_move_policy": {
+    "llm_repair_attempts": 1,
+    "fallback": "heuristic"
+  },
+  "random_seed": 7,
+  "turn_timeout_s": 60,
+  "mcp": {
+    "cop_port": 8001,
+    "thief_port": 8002,
+    "cop_url": "http://127.0.0.1:8001",
+    "thief_url": "http://127.0.0.1:8002",
+    "token_env_cop": "MCP_COP_TOKEN",
+    "token_env_thief": "MCP_THIEF_TOKEN"
+  },
+  "llm": {
+    "provider": "anthropic",
+    "model": "claude-haiku-4-5-20251001",
+    "temperature": 0.7,
+    "max_tokens": 1024,
+    "api_key_env": "ANTHROPIC_API_KEY",
+    "retries": 2
+  },
+  "qlearning": {
+    "enabled": false,
+    "learning_rate": 0.1,
+    "discount_factor": 0.9,
+    "epsilon_start": 1.0,
+    "epsilon_min": 0.05,
+    "epsilon_decay": 0.995,
+    "training_episodes": 2000
+  },
+  "gui": {
+    "enabled": true,
+    "cell_px": 96,
+    "speed_ms": 400,
+    "export_png": true,
+    "artifacts_dir": "artifacts/screenshots"
+  },
+  "report": {
+    "recipient": "rmisegal+uoh26b@gmail.com",
+    "subject": "HW6 report - moamteam",
+    "dry_run": true,
+    "credentials_path_env": "GOOGLE_CREDENTIALS_PATH",
+    "token_path_env": "GOOGLE_TOKEN_PATH",
+    "gmail_scopes": ["https://www.googleapis.com/auth/gmail.modify"]
+  },
+  "logging": {
+    "dir": "artifacts/logs",
+    "level": "INFO",
+    "jsonl": true
+  }
+}
