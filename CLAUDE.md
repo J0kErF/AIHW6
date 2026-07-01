@@ -6,10 +6,17 @@ free natural-language messages over two FastMCP servers; fully autonomous throug
 auto-emailed JSON report. Grade target 98%+.
 
 ## Read order (before writing any code)
+0. **`AGENT_MEMORY.md` — ALWAYS FIRST.** Shared cross-chat memory: ground truth, current
+   status, decisions, blockers, next actions. Follow its read/update protocol.
 1. `docs/HW6_DECLARATION.md` — what/grounds/deliverables
 2. `docs/GAME_RULES.md` — normative rules (code that disagrees = bug)
 3. Your track file in `plan/tasks/TRACK_*.md` + its PRD in `docs/`
 4. `plan/TASK_BOARD.md` — ownership, sync points, status protocol
+
+## Before ending any work session
+Update `AGENT_MEMORY.md` per its rules: session-log entry (VERIFIED vs CLAIMED), status
+snapshot cells you changed, any new decisions/blockers. An unlogged session = lost work
+for the next chat.
 
 ## Hard rules (violations lose grade points — spec-mandated)
 - **No hard-coded parameters.** Everything through `config.json` via `src/common/config.py`.
