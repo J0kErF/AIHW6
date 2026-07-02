@@ -18,7 +18,7 @@ message feed — plus automatic PNG evidence for the README.
 - [ ] D5. Controls: pause/step/speed; `config.gui.enabled` honored; headless = no GUI import.
 - [x] D6. `gui/export.py` — auto PNG at each sub-game end + final summary board →
        `artifacts/screenshots/` (README evidence).
-- [ ] D7. Replay mode: `uv run python -m src.gui.replay artifacts/logs/<run>.jsonl`.
+- [x] D7. Replay mode: `uv run python -m src.gui.replay artifacts/logs/<run>.jsonl`.
 - [x] D8. Mock-driven demo script (`tests/gui/demo_mock.py`) so D is verifiable before C exists.
 
 ## Definition of Done

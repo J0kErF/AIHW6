@@ -29,7 +29,7 @@
     "fallback": "heuristic"
   },
   "random_seed": 7,
-  "turn_timeout_s": 60,
+  "turn_timeout_s": 180,
   "mcp": {
     "cop_port": 8001,
     "thief_port": 8002,
@@ -39,11 +39,12 @@
     "token_env_thief": "MCP_THIEF_TOKEN"
   },
   "llm": {
-    "provider": "anthropic",
-    "model": "claude-haiku-4-5-20251001",
+    "provider": "deepseek",
+    "model": "deepseek-chat",
     "temperature": 0.7,
-    "max_tokens": 1024,
-    "api_key_env": "ANTHROPIC_API_KEY",
+    "max_tokens": 256,
+    "api_key_env": "DEEPSEEK_API_KEY",
+    "base_url": "https://api.deepseek.com/v1",
     "retries": 2
   },
   "qlearning": {

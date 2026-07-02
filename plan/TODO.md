@@ -23,13 +23,14 @@
 - [x] Bearer-token auth + rotation procedure + audit JSONL
 - [x] 50-message integration test green (+ live HTTP smoke on :8001, bad token → rejected)
 
-## P3–P5 — Orchestrator, strategy, NL (Track C)
-- [ ] LLM adapter (provider from config, retries, cost log)
-- [ ] Personas + JSON action output + repair + heuristic fallback
-- [ ] Belief grid + motion-constraint update
-- [ ] Full autonomous local series (mock LLM → real LLM), ladder stages 2–3
-- [ ] Heuristic baseline; optional Q-Table + learning-curve export
-- [ ] Deception/ambiguity demonstrated in transcripts
+## P3–P5 — Orchestrator, strategy, NL (Track C) ✅ core 2026-07-02
+- [x] LLM adapter (deepseek/openai-compat + anthropic + mock; retries, 45s req timeout, cost JSONL)
+- [x] Personas + JSON action output + repair + heuristic fallback (guard tested)
+- [x] Belief grid (motion spread, vision collapse, deception-aware hint blend, accuracy metric)
+- [x] Full autonomous local series: mock E2E 2×2–5×5 (pytest) + REAL DeepSeek 2×2 series (0 tech losses, 0 fallbacks)
+- [ ] Real-LLM ladder runs 3×3 / 4×4 (ambiguity sweep) / 5×5 — pre-cloud rehearsal (Wave 3)
+- [ ] Optional Q-Table + learning-curve export (differentiator, C6)
+- [x] Deception demonstrated: `artifacts/transcripts/deepseek_2x2_transcript.md` (curate best for README)
 
 ## P6 — GUI (Track D) 🔵 core done 2026-07-02
 - [x] Tech pick recorded in PRD_gui (pygame-ce); renderer on TurnResult events

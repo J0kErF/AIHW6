@@ -11,19 +11,19 @@ language over MCP, inferring positions under partial observability, acting legal
 6 valid sub-games without a human.
 
 ## Tasks
-- [ ] C1. `agents/llm_adapter.py` — provider-agnostic (`anthropic` first), config-driven
+- [x] C1. `agents/llm_adapter.py` — provider-agnostic (`anthropic` first), config-driven
        model/temp/tokens, retries+timeout, per-call cost/latency JSONL.
-- [ ] C2. `agents/personas/` — cop & thief system prompts (files, not code): role, goal,
+- [x] C2. `agents/personas/` — cop & thief system prompts (files, not code): role, goal,
        rules digest, output contract `{"action","message","belief","reasoning"}`; explicit
        permission to deceive; forbid raw-coordinate message conventions.
-- [ ] C3. `agents/parser.py` — defensive JSON extraction; 1 repair round-trip; fallback to heuristic.
-- [ ] C4. `agents/belief.py` — belief grid: init uniform; update from vision, message
+- [x] C3. `agents/parser.py` — defensive JSON extraction; 1 repair round-trip; fallback to heuristic.
+- [x] C4. `agents/belief.py` — belief grid: init uniform; update from vision, message
        interpretation (LLM-extracted hints), 1-step motion constraint; expose accuracy metric.
-- [ ] C5. `agents/strategy.py` — heuristic baseline (Chebyshev pursuit/evasion + barrier
+- [x] C5. `agents/strategy.py` — heuristic baseline (Chebyshev pursuit/evasion + barrier
        value); legality guard using `Engine.legal_actions`.
 - [ ] C6. `agents/qlearn.py` — optional Tabular Q-Learning (Bellman, ε-greedy, params from
        config); self-play trainer; learning-curve CSV export. (Differentiator — do after C8.)
-- [ ] C7. `orchestrator.py` — full loop: handshake both servers → per-turn
+- [x] C7. `orchestrator.py` — full loop: handshake both servers → per-turn
        (receive msg → LLM decide → validate → apply → send msg → GUI event → verify_state)
        → sub-game end → series accounting → Reporter trigger. Turn timeout + technical-loss
        voiding. CLI flags: `--config --grid --mock-llm --dry-run`.

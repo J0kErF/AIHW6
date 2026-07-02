@@ -46,6 +46,10 @@
   share with `rmisegal@gmail.com`. Provisional URL in config: `https://github.com/J0kErF/AIHW6`.
 - Report email target: `rmisegal+uoh26b@gmail.com`, JSON-only body, sent automatically.
 - User's email: mohammad@mryosef.com. Environment: Windows 11, PowerShell, uv, Python ≥3.11.
+- **LLM = DeepSeek** (user, 2026-07-02): key copied from `../aihw4/.env` into `aihw6/.env`
+  as `DEEPSEEK_API_KEY` (gitignored). OpenAI-compatible, base_url `https://api.deepseek.com/v1`,
+  model `deepseek-chat`, balance was ~$1.80. Latency can spike to ~35s/call → turn_timeout_s=180,
+  client request timeout 45s, max_tokens 256.
 
 ## 📊 Status Snapshot (update the cell, keep the table)
 
@@ -54,7 +58,7 @@
 | Foundation docs + plan (27 files) | ✅ committed `f4e7a47` | 2026-07-02 |
 | Track A — engine (`src/engine`, `src/common`) | ✅ DONE — 21 tests, all ladder grids | 2026-07-02 |
 | Track B — MCP servers (`src/servers`) | ✅ DONE — 6 tests + live HTTP smoke :8001 (handshake/messages/401) | 2026-07-02 |
-| Track C — agents/orchestrator | ⬜ UNBLOCKED (SP-1+SP-2 frozen); needs LLM API key from user | — |
+| Track C — agents/orchestrator | ✅ core done — 14 tests + REAL DeepSeek 2×2 series (0 tech losses/fallbacks); open: real-LLM 3×3–5×5 runs, optional Q-learn | 2026-07-02 |
 | Track D — GUI | 🔵 core done (render/PNG/replay-roundtrip, 4 tests); live window + pause/step + replay CLI pending | 2026-07-02 |
 | Track E — reporting/Gmail | 🔵 code done (5 tests, schemas byte-match spec); E1 Google Cloud setup MANUAL, not done | 2026-07-02 |
 | Track F — cloud deploy | ⬜ not started (gate: SP-3) | — |
@@ -94,16 +98,37 @@
 
 ## ▶️ Next Actions (whoever reads this next)
 
-1. **Wave 2 = Track C**: LLM adapter → personas → belief grid → orchestrator loop →
-   local E2E (mock LLM first, then real). FIRST ask the user which LLM API key they have
-   (config currently assumes `ANTHROPIC_API_KEY`).
+1. **Wave 3 = Track F prep + rehearsals**: (a) real-LLM 5×5 series over real localhost
+   ports :8001/:8002 (not --in-memory) — the pre-cloud rehearsal; (b) 4×4 vision-radius
+   sweep for the README ambiguity analysis; (c) pick cloud platform + deploy (PRD_cloud_security).
 2. **E1 with the user** (browser, ~15 min): Google Cloud project + OAuth client + test
-   users per `docs/ENVIRONMENT.md` §5, then `uv run python -m src.reporting.smoke`.
-3. Track D leftovers can ride along with C: live window vs real orchestrator, pause/step,
-   `src/gui/replay.py` CLI.
+   users per `docs/ENVIRONMENT.md` §5, then `uv run python -m src.reporting.smoke`
+   (draft mode). Blocks the final email step only.
+3. Optional differentiators when time allows: Q-learning module (C6) + learning curve;
+   pause/step GUI controls (D5).
 4. After each session: tick track boxes, update TASK_BOARD + this file.
 
 ## 📝 Session Log (newest first)
+
+### 2026-07-02 — Wave 2: Track C + DeepSeek (Claude, main chat)
+- Built `src/agents/` (llm_adapter with anthropic/deepseek/openai/mock providers, persona
+  prompt files, defensive parser + repair, BeliefGrid, heuristic guard, LlmAgent) and
+  `src/orchestrator.py` (async loop over two MCP clients, turn timeout → TechnicalLoss,
+  JSONL turn log, PNG per sub-game, report + optional Gmail; CLI --grid/--mock-llm/
+  --no-email/--in-memory). Added `src/gui/replay.py` (D7).
+- User directive: use DeepSeek key from previous HW → found in `../aihw4/.env`, copied to
+  `aihw6/.env` (verified gitignored). Config switched to deepseek/deepseek-chat.
+- VERIFIED: 50 pytest green (14 new: parser/belief/guard + mock E2E ladder 2×2–5×5 through
+  real in-memory MCP servers, incl. free-language anti-coordinate-protocol test).
+- VERIFIED: REAL DeepSeek autonomous series on 2×2 (--in-memory --no-email): 6/6 valid
+  sub-games, 0 technical losses, 0 fallbacks, verify_ok all turns, spec-shaped report JSON
+  (cop 120 / thief 30 — 2×2 is trivially cop-favored, expected). Transcript with real
+  banter/deception saved: `artifacts/transcripts/deepseek_2x2_transcript.md`.
+- Learned: first DeepSeek run hit 35s/call latency → one turn > 60s timeout → pipeline
+  correctly VOIDED it (technical-loss path proven in production). Tuned: turn_timeout_s
+  180, request timeout 45s, max_tokens 256.
+- SP-3 posted GREEN → Track F unblocked. Open: real-LLM 3×3/4×4/5×5 rehearsals, E1 Google
+  setup (user), Q-learn (optional), cloud deploy.
 
 ### 2026-07-02 — Wave 1 implementation (Claude, main chat)
 - Track A VERIFIED: `src/common/` (config loader, schemas=SP-1, logging) + `src/engine/`

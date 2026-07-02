@@ -11,7 +11,7 @@
 |---|---|---|---|---|---|
 | A | Engine dev | `src/engine/`, `src/common/`, `tests/engine/` | `tasks/TRACK_A_game_engine.md` | ✅ 2026-07-02 (21 tests) | — |
 | B | MCP dev | `src/servers/`, `tests/mcp/` | `tasks/TRACK_B_mcp_servers.md` | ✅ 2026-07-02 (6 tests + live :8001 HTTP smoke) | — |
-| C | Agents/LLM dev | `src/agents/`, `src/orchestrator.py`, `tests/orchestrator/` | `tasks/TRACK_C_agents_llm.md` | ⬜ **UNBLOCKED** | needs LLM API key (ask user) |
+| C | Agents/LLM dev | `src/agents/`, `src/orchestrator.py`, `tests/orchestrator/` | `tasks/TRACK_C_agents_llm.md` | ✅ core done 2026-07-02 (14 tests + real DeepSeek E2E); open: C6 Q-learn (optional), C8 real-LLM 3×3/4×4/5×5 runs, C9 curated deception transcript | — |
 | D | GUI dev | `src/gui/`, `artifacts/` | `tasks/TRACK_D_gui.md` | 🔵 core done (render/export/replay; live window untested, no pause/step yet) | — |
 | E | Reporting dev | `src/reporting/`, secrets setup (out of repo) | `tasks/TRACK_E_reporting_gmail.md` | 🔵 code done (5 tests); E1 Google Cloud setup + OAuth run pending (manual, with user) | E1 user session |
 | F | Cloud/sec ops | `deploy/`, `docs/RUNBOOK_cloud.md` | `tasks/TRACK_F_cloud_security.md` | ⬜ | SP-3 (local E2E) |
@@ -29,7 +29,7 @@
 | SP-0 config/rules/report schemas | ✅ frozen (docs committed) | foundation | 2026-07-02 |
 | SP-1 engine interfaces | ✅ FROZEN — `src/common/schemas.py` + `Engine`/`SeriesManager`/`Policy` in `src/engine/` | Track A | 2026-07-02 |
 | SP-2 MCP tool signatures | ✅ FROZEN — implemented in `src/servers/base_server.py`, client wrapper `src/servers/client.py` | Track B | 2026-07-02 |
-| SP-3 local E2E green | ⬜ (Track C next: orchestrator + LLM) | | |
+| SP-3 local E2E green | ✅ GREEN — mock-LLM E2E on 2×2/3×3/4×4/5×5 (pytest) + REAL DeepSeek 6-sub-game series on 2×2, 0 technical losses, 0 fallbacks, report JSON built. Track F unblocked. Pre-cloud rehearsal (real LLM on 5×5 over :8001/:8002) is Wave 3 step 1. | Track C | 2026-07-02 |
 
 ## Contract changes
 

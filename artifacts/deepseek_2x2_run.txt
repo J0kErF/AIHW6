@@ -1,0 +1,94 @@
+MCP handshakes complete
+pygame-ce 2.5.7 (SDL 2.32.10, Python 3.12.13)
+  sub-game 1: cop wins (capture, 0 rounds, 0 barriers)
+  sub-game 2: cop wins (capture, 1 rounds, 0 barriers)
+  sub-game 3: cop wins (capture, 0 rounds, 0 barriers)
+  sub-game 4: cop wins (capture, 1 rounds, 0 barriers)
+  sub-game 5: cop wins (capture, 2 rounds, 0 barriers)
+  sub-game 6: cop wins (capture, 2 rounds, 0 barriers)
+series complete: cop 120 — thief 30 (0 technical losses voided) · logs: 
+artifacts/logs/run_20260702_115414_turns.jsonl
+email skipped (--no-email); report body follows
+{
+  "group_name": "moamteam",
+  "students": [
+    "Mohammad Yosef ([REDACTED])",
+    "Amear Abu Farekh ([REDACTED])"
+  ],
+  "github_repo": "https://github.com/J0kErF/AIHW6",
+  "cop_mcp_url": "http://127.0.0.1:8001",
+  "thief_mcp_url": "http://127.0.0.1:8002",
+  "timezone": "Asia/Jerusalem",
+  "sub_games": [
+    {
+      "index": 1,
+      "winner": "cop",
+      "reason": "capture",
+      "moves_played": 0,
+      "barriers_used": 0,
+      "cop_points": 20,
+      "thief_points": 5,
+      "started_at": "2026-07-02T11:54:15+03:00",
+      "ended_at": "2026-07-02T11:54:24+03:00"
+    },
+    {
+      "index": 2,
+      "winner": "cop",
+      "reason": "capture",
+      "moves_played": 1,
+      "barriers_used": 0,
+      "cop_points": 20,
+      "thief_points": 5,
+      "started_at": "2026-07-02T11:54:24+03:00",
+      "ended_at": "2026-07-02T11:55:05+03:00"
+    },
+    {
+      "index": 3,
+      "winner": "cop",
+      "reason": "capture",
+      "moves_played": 0,
+      "barriers_used": 0,
+      "cop_points": 20,
+      "thief_points": 5,
+      "started_at": "2026-07-02T11:55:05+03:00",
+      "ended_at": "2026-07-02T11:55:37+03:00"
+    },
+    {
+      "index": 4,
+      "winner": "cop",
+      "reason": "capture",
+      "moves_played": 1,
+      "barriers_used": 0,
+      "cop_points": 20,
+      "thief_points": 5,
+      "started_at": "2026-07-02T11:55:37+03:00",
+      "ended_at": "2026-07-02T11:56:12+03:00"
+    },
+    {
+      "index": 5,
+      "winner": "cop",
+      "reason": "capture",
+      "moves_played": 2,
+      "barriers_used": 0,
+      "cop_points": 20,
+      "thief_points": 5,
+      "started_at": "2026-07-02T11:56:12+03:00",
+      "ended_at": "2026-07-02T11:57:04+03:00"
+    },
+    {
+      "index": 6,
+      "winner": "cop",
+      "reason": "capture",
+      "moves_played": 2,
+      "barriers_used": 0,
+      "cop_points": 20,
+      "thief_points": 5,
+      "started_at": "2026-07-02T11:57:04+03:00",
+      "ended_at": "2026-07-02T11:58:18+03:00"
+    }
+  ],
+  "totals": {
+    "cop": 120,
+    "thief": 30
+  }
+}

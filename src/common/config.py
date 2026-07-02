@@ -61,6 +61,7 @@ class Llm(_Strict):
     max_tokens: int
     api_key_env: str
     retries: int
+    base_url: str | None = None  # OpenAI-compatible providers (e.g. DeepSeek)
 
 
 class QLearning(_Strict):
