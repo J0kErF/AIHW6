@@ -1,11 +1,17 @@
 {
   "identity": {
     "group_name": "moamteam",
-    "students": ["Mohammad Yosef ([REDACTED])", "Amear Abu Farekh ([REDACTED])"],
+    "students": [
+      "Mohammad Yosef ([REDACTED])",
+      "Amear Abu Farekh ([REDACTED])"
+    ],
     "github_repo": "https://github.com/J0kErF/AIHW6",
     "timezone": "Asia/Jerusalem"
   },
-  "grid_size": [5, 5],
+  "grid_size": [
+    5,
+    5
+  ],
   "max_moves": 25,
   "num_games": 6,
   "max_barriers": 5,
@@ -18,8 +24,14 @@
   "turn_order_first": "thief",
   "start_positions": {
     "mode": "random",
-    "fixed_cop": [0, 0],
-    "fixed_thief": [4, 4]
+    "fixed_cop": [
+      0,
+      0
+    ],
+    "fixed_thief": [
+      4,
+      4
+    ]
   },
   "observation": {
     "vision_radius": 2
@@ -33,8 +45,8 @@
   "mcp": {
     "cop_port": 8001,
     "thief_port": 8002,
-    "cop_url": "http://127.0.0.1:8001/mcp",
-    "thief_url": "http://127.0.0.1:8002/mcp",
+    "cop_url": "https://hw6-cop-mcp.onrender.com/mcp",
+    "thief_url": "https://hw6-thief-mcp.onrender.com/mcp",
     "token_env_cop": "MCP_COP_TOKEN",
     "token_env_thief": "MCP_THIEF_TOKEN"
   },
@@ -69,7 +81,9 @@
     "dry_run": true,
     "credentials_path_env": "GOOGLE_CREDENTIALS_PATH",
     "token_path_env": "GOOGLE_TOKEN_PATH",
-    "gmail_scopes": ["https://www.googleapis.com/auth/gmail.modify"]
+    "gmail_scopes": [
+      "https://www.googleapis.com/auth/gmail.modify"
+    ]
   },
   "logging": {
     "dir": "artifacts/logs",

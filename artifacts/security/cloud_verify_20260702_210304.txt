@@ -1,0 +1,17 @@
+cloud_verify @ 2026-07-02 21:02:02
+
+=== cop @ https://hw6-cop-mcp.onrender.com/mcp
+OK  : wrong token rejected (ToolError)
+OK  : handshake session rPOXTC5J...
+OK  : game config {'server_role': 'cop', 'grid_size': [5, 5], 'max_moves': 25, 'num_games': 6, 'max_barriers': 5}
+OK  : 50 messages, order preserved, 26.2s round-trip
+OK  : verify_state {'ok': True, 'expected_turn': 49}
+
+=== thief @ https://hw6-thief-mcp.onrender.com/mcp
+OK  : wrong token rejected (ToolError)
+OK  : handshake session 5hYoaBWt...
+OK  : game config {'server_role': 'thief', 'grid_size': [5, 5], 'max_moves': 25, 'num_games': 6, 'max_barriers': 5}
+OK  : 50 messages, order preserved, 27.3s round-trip
+OK  : verify_state {'ok': True, 'expected_turn': 49}
+
+ALL CHECKS PASSED
