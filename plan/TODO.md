@@ -8,7 +8,7 @@
 - [x] `git init` + foundation commit (LOCAL only — user provides GitHub repo URL at the end, then push)
 - [x] Real student names/ids in config.json + REPORTING_SPEC (from moamteam-ex05: Mohammad Yosef [REDACTED], Amear Abu Farekh [REDACTED])
 - [x] Bonus decision: **WAIVED** — bonus window closed for students; P10 dropped
-- [ ] Confirm final repo URL (provisional: https://github.com/J0kErF/AIHW6, pattern from AIHW5) → update config.json if different → push
+- [x] Repo confirmed + pushed: https://github.com/J0kErF/AIHW6 (origin/main tracking)
 
 ## P1 — Engine (Track A) ✅ 2026-07-02
 - [x] pyproject.toml (uv) + src skeleton + pydantic config loader
@@ -47,10 +47,10 @@
 - [ ] Re-run cloud_verify from open network + cloud E2E series + archive logs
 
 ## P8 — Reporting (Track E) 🔵 code done 2026-07-02
-- [ ] Google Cloud project: Gmail+Calendar APIs enabled, OAuth screen, scopes, Desktop client, test users (MANUAL — do with user in browser)
-- [ ] credentials.json + token.json in external secrets dir; auth flow tested (run `uv run python -m src.reporting.smoke`)
+- [x] Google Cloud project + OAuth client + test users (user, 2026-07-02); Gmail API enabled after 403 catch
+- [x] credentials.json + token.json in C:/Users/moham/secrets/moamteam-google/; OAuth flow VERIFIED
 - [x] Report builder (internal + bonus schemas) + validity guard (exactly 6) — 5 tests
-- [ ] Draft-mode e2e → real send to ourselves → wire recipient from config
+- [x] Draft-mode e2e VERIFIED (draft r-2536605247747267589, pure JSON, 2026-07-02); real send happens in the final graded run
 
 ## P9 — Submission
 - [x] README.md scientific report v1 (abstract, Dec-POMDP, challenges w/ real data, experiments, proofs) — refresh cloud section after P7

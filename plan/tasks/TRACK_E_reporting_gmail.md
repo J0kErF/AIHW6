@@ -9,7 +9,7 @@ Exact-schema JSON reports + fully automated Gmail delivery (OAuth client + token
 draft-mode safety net.
 
 ## Tasks
-- [ ] E1. **Google Cloud one-time setup** (follow ENVIRONMENT §5 / course guide):
+- [x] E1. **Google Cloud one-time setup** (follow ENVIRONMENT §5 / course guide):
        project `moamteam_hw6` → enable **Gmail API** + **Google Calendar API** →
        Auth Platform: External, contacts → Data access scopes `gmail.modify` + `calendar` →
        Desktop OAuth client → download `credentials.json` → secrets dir OUTSIDE repo →
@@ -23,9 +23,9 @@ draft-mode safety net.
 - [x] E5. `reporting/gmail_sender.py` — send via `users().messages().send`; body =
        `json.dumps(report, ensure_ascii=False, indent=2)` ONLY; subject+recipient from
        config; `dry_run=true` → create **draft** instead (course-video pattern).
-- [ ] E6. Smoke script: `uv run python -m src.reporting.smoke` → OAuth flow → draft with
+- [x] E6. Smoke script: `uv run python -m src.reporting.smoke` → OAuth flow → draft with
        fixture report → manual visual check in Gmail (pure JSON, nothing else).
-- [ ] E7. One real send to our own address; only then flip recipient config to
+- [~] E7. (deferred to final graded run) One real send to our own address; only then flip recipient config to
        `rmisegal+uoh26b@gmail.com` (leave `dry_run=true` until final submission run).
 - [ ] E8. Bonus path: builder for Inter-Group JSON + reconcile helper (byte-diff two
        payloads; refuse send unless identical & `mutual_agreement=true`).

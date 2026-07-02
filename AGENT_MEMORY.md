@@ -42,8 +42,14 @@
 - Assignment: ex06 "Dual AI agent race via MCP servers" (spec PDF in parent folder).
 - Grade target: **98%** → treat spec "recommended" items as mandatory (see `docs/GRADING_RUBRIC.md`).
 - **Bonus is WAIVED** (window closed for students — user confirmed 2026-07-02). Do not build bonus features.
-- Git: **local repo only**; user will provide the GitHub URL at the end → then push and
-  share with `rmisegal@gmail.com`. Provisional URL in config: `https://github.com/J0kErF/AIHW6`.
+- Git: **pushed to `https://github.com/J0kErF/AIHW6`** (user-provided, 2026-07-02);
+  `origin/main` tracking set. Still to do at submission: share repo with `rmisegal@gmail.com`.
+- Google OAuth (E1): user created the Cloud project + Desktop client; `credentials.json`
+  moved to `C:/Users/moham/secrets/moamteam-google/` (paths in .env, forward slashes —
+  backslash paths in .env corrupt via `\t`→TAB, learned the hard way).
+- Render: user has an account; terminal automation ready via `scripts/render_deploy.py`
+  (REST API) — needs `RENDER_API_KEY=rnd_...` pasted into `.env` (dashboard → Account
+  Settings → API Keys). That is the ONLY missing piece for cloud.
 - Report email target: `rmisegal+uoh26b@gmail.com`, JSON-only body, sent automatically.
 - User's email: mohammad@mryosef.com. Environment: Windows 11, PowerShell, uv, Python ≥3.11.
 - **LLM = DeepSeek** (user, 2026-07-02): key copied from `../aihw4/.env` into `aihw6/.env`
@@ -60,7 +66,7 @@
 | Track B — MCP servers (`src/servers`) | ✅ DONE — 6 tests + live HTTP smoke :8001 (handshake/messages/401) | 2026-07-02 |
 | Track C — agents/orchestrator | ✅ core done — 14 tests + REAL DeepSeek 2×2 series (0 tech losses/fallbacks); open: real-LLM 3×3–5×5 runs, optional Q-learn | 2026-07-02 |
 | Track D — GUI | 🔵 core done (render/PNG/replay-roundtrip, 4 tests); live window + pause/step + replay CLI pending | 2026-07-02 |
-| Track E — reporting/Gmail | 🔵 code done (5 tests, schemas byte-match spec); E1 Google Cloud setup MANUAL, not done | 2026-07-02 |
+| Track E — reporting/Gmail | ✅ E2E PROVEN — OAuth token cached, Gmail API enabled, real DRAFT created (r-2536605247747267589, pure JSON). Real send deferred to final graded run (dry_run flip) | 2026-07-02 |
 | Track F — cloud deploy | 🔵 fully scripted (Dockerfile+render.yaml+runbook+verify battery passed locally); BLOCKED on user: Render account (~2 min) | 2026-07-02 |
 | Real-LLM 5×5 rehearsal over :8001/:8002 | ✅ cop 90 : thief 40, 166 turns, 0 tech losses | 2026-07-02 |
 | Analysis: vision sweep + Q-learn curve | ✅ `artifacts/analysis/` | 2026-07-02 |
@@ -101,19 +107,32 @@
 
 ## ▶️ Next Actions (whoever reads this next)
 
-Only TWO user-manual steps remain; everything else is scripted:
-1. **USER: Render.com account** (~2 min, GitHub login) → follow `docs/RUNBOOK_cloud.md`
-   §1 (Blueprint deploy from repo → set 2 token env vars → paste 2 URLs into config.json)
-   → then run `uv run python scripts/cloud_verify.py` and
-   `uv run python -m src.orchestrator --no-email` (cloud E2E) — archive outputs.
-2. **USER: Google Cloud OAuth** (~15 min, browser): `docs/ENVIRONMENT.md` §5 → download
-   credentials.json → set GOOGLE_CREDENTIALS_PATH/GOOGLE_TOKEN_PATH in .env → run
-   `uv run python -m src.reporting.smoke` (creates a DRAFT; browser consent once).
-3. After both: refresh README §6 cloud lines, GRADING_RUBRIC self-audit, final graded
-   run with dry_run=false, push to the user-provided GitHub URL, share with
-   rmisegal@gmail.com, fill moamteam-ex06.pdf.
+ONE user-manual step remains; everything else is scripted:
+1. **USER: Render API key** — dashboard → Account Settings → API Keys → create →
+   add `RENDER_API_KEY=rnd_...` to `aihw6/.env`. Then run
+   `uv run python scripts/render_deploy.py` (creates both services from the GitHub repo,
+   sets tokens, waits for live, writes URLs into config.json), then
+   `uv run python scripts/cloud_verify.py` and
+   `uv run python -m src.orchestrator --no-email` (cloud E2E; archive outputs).
+2. After cloud: refresh README §6 cloud lines, GRADING_RUBRIC self-audit, final graded
+   run with `report.dry_run=false` (real email to rmisegal+uoh26b@gmail.com), push,
+   share repo with rmisegal@gmail.com, fill moamteam-ex06.pdf, tag `submission-hw6`.
 
 ## 📝 Session Log (newest first)
+
+### 2026-07-02 — Repo push + Google E2E + Render automation (Claude, main chat)
+- Pushed all commits to https://github.com/J0kErF/AIHW6 (origin/main tracking).
+- credentials.json (user-created, was in aihw6/) verified + moved to
+  `C:/Users/moham/secrets/moamteam-google/`; .env paths use FORWARD slashes
+  (backslash `\t` in .env became a TAB and broke pathlib — recorded in Ground Truth).
+- OAuth consent completed by user; token.json cached. First draft attempt hit 403
+  accessNotConfigured → user enabled Gmail API → retry loop (`scripts/gmail_retry.py`)
+  created draft `r-2536605247747267589`. VERIFIED: Gmail leg works end-to-end; sender
+  stays in dry_run (draft) until the final graded run.
+- Wrote `scripts/render_deploy.py` — full Render REST-API deploy (create services from
+  repo, tokens, wait live, write URLs to config). BLOCKED only on RENDER_API_KEY in .env.
+- Gotcha: `load_dotenv()` without args crashes under `python -` (stdin) — always pass
+  an explicit path in scripts.
 
 ### 2026-07-02 — Wave 3: rehearsal, analysis, cloud kit, README (Claude, main chat)
 - VERIFIED: real-LLM 5×5 series over REAL HTTP servers :8001/:8002 — cop 4 : thief 2
