@@ -1,0 +1,30 @@
+[project]
+name = "aihw6"
+version = "0.1.0"
+description = "HW6 - Dual AI agent pursuit (Cop & Thief) via MCP servers"
+requires-python = ">=3.11"
+dependencies = [
+    "pydantic>=2.7",
+    "numpy>=1.26",
+    "rich>=13.7",
+    "fastmcp>=2.3",
+    "anthropic>=0.40",
+    "google-api-python-client>=2.130",
+    "google-auth-oauthlib>=1.2",
+    "google-auth-httplib2>=0.2",
+    "pygame-ce>=2.5",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.2",
+    "pytest-asyncio>=0.23",
+]
+
+[tool.uv]
+package = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+asyncio_mode = "auto"

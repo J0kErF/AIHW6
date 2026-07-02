@@ -24,9 +24,9 @@ score, and the natural-language message feed. Plus export utilities (screenshots
 
 ## 3. Technology decision
 
-Choose the cheapest thing that screenshots well; recommendation order:
-`pygame` (simple canvas) → `textual`/`rich` TUI (fast, but screenshots less "graphic") →
-`tkinter`. Decision recorded here once made.
+**DECIDED (2026-07-02): `pygame-ce`.** Surface rendering needs no display, so one code
+path serves the live window, headless cloud runs, and `pygame.image.save` PNG evidence.
+Python 3.13-compatible (classic pygame lagged).
 
 ## 4. Acceptance criteria
 

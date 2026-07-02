@@ -52,11 +52,11 @@
 | Item | Status | Last verified |
 |---|---|---|
 | Foundation docs + plan (27 files) | ✅ committed `f4e7a47` | 2026-07-02 |
-| Track A — engine (`src/engine`, `src/common`) | ⬜ not started | — |
-| Track B — MCP servers (`src/servers`) | ⬜ not started | — |
-| Track C — agents/orchestrator | ⬜ not started (gate: SP-1+SP-2) | — |
-| Track D — GUI | ⬜ not started | — |
-| Track E — reporting/Gmail | ⬜ not started (Google Cloud project NOT yet created) | — |
+| Track A — engine (`src/engine`, `src/common`) | ✅ DONE — 21 tests, all ladder grids | 2026-07-02 |
+| Track B — MCP servers (`src/servers`) | ✅ DONE — 6 tests + live HTTP smoke :8001 (handshake/messages/401) | 2026-07-02 |
+| Track C — agents/orchestrator | ⬜ UNBLOCKED (SP-1+SP-2 frozen); needs LLM API key from user | — |
+| Track D — GUI | 🔵 core done (render/PNG/replay-roundtrip, 4 tests); live window + pause/step + replay CLI pending | 2026-07-02 |
+| Track E — reporting/Gmail | 🔵 code done (5 tests, schemas byte-match spec); E1 Google Cloud setup MANUAL, not done | 2026-07-02 |
 | Track F — cloud deploy | ⬜ not started (gate: SP-3) | — |
 | Local E2E (SP-3) | ⬜ | — |
 | Cloud E2E + evidence | ⬜ | — |
@@ -64,6 +64,17 @@
 | Final email + submission | ⬜ | — |
 
 ## 🧭 Decisions Log (why-record; newest first)
+
+- 2026-07-02 — Rule interpretations (documented in `src/engine/engine.py` docstring, must
+  reach README): (1) the 25-move cap counts completed ROUNDS (thief+cop both acted);
+  (2) capture is symmetric — either agent ending on the opponent's cell = cop wins;
+  (3) barrier cell blocks entry for both, cop may leave it; (4) a fully walled-in agent
+  plays `Pass` (only legal with zero legal actions) so the game always progresses.
+- 2026-07-02 — MCP auth model: bearer token at `handshake` only; returned session_id is
+  the capability for later calls; token rotation via env var = revoke. Why: transport-
+  agnostic, testable in-memory, satisfies spec token+revoke requirement.
+- 2026-07-02 — GUI tech: pygame-ce; Surface-only rendering (no display) so one code path
+  serves live window, headless cloud, and PNG evidence.
 
 - 2026-07-02 — LLM: Approach 1 (cloud API, Anthropic first) primary; Approach 3 (hybrid)
   for cloud phase; Ollama documented only. Why: spec recommends, zero exposure risk.
@@ -83,13 +94,31 @@
 
 ## ▶️ Next Actions (whoever reads this next)
 
-1. Kick off **Wave 1** (parallel): Track A (engine+commons), Track B (MCP servers),
-   Track D (GUI vs mock events), Track E (report builder vs fixtures; E1 Google setup with user).
-2. Track A must post "SP-1 FROZEN" on `plan/TASK_BOARD.md` ASAP — it unblocks Track C.
-3. After each track session: tick boxes in its `plan/tasks/TRACK_*.md`, update TASK_BOARD
-   status, and log a session entry below.
+1. **Wave 2 = Track C**: LLM adapter → personas → belief grid → orchestrator loop →
+   local E2E (mock LLM first, then real). FIRST ask the user which LLM API key they have
+   (config currently assumes `ANTHROPIC_API_KEY`).
+2. **E1 with the user** (browser, ~15 min): Google Cloud project + OAuth client + test
+   users per `docs/ENVIRONMENT.md` §5, then `uv run python -m src.reporting.smoke`.
+3. Track D leftovers can ride along with C: live window vs real orchestrator, pause/step,
+   `src/gui/replay.py` CLI.
+4. After each session: tick track boxes, update TASK_BOARD + this file.
 
 ## 📝 Session Log (newest first)
+
+### 2026-07-02 — Wave 1 implementation (Claude, main chat)
+- Track A VERIFIED: `src/common/` (config loader, schemas=SP-1, logging) + `src/engine/`
+  (board, engine, series, errors); 21 tests green incl. full ladder 2×2→5×5, weird-config
+  no-hardcode proof, technical-loss void+rerun.
+- Track B VERIFIED: `src/servers/` (base_server factory, cop/thief entrypoints, typed
+  async client); 6 in-memory tests + real HTTP smoke on :8001 (handshake, config, message
+  round-trip, wrong token → ToolError). Audit JSONL confirmed.
+- Track E code VERIFIED by 5 tests (report keys byte-match spec §9.1/§9.2, pure-JSON body,
+  6-sub-game + totals guards). `auth.py`/`gmail_sender.py`/`smoke.py` are CLAIMED —
+  cannot run until E1 Google setup (manual). Sender defaults to DRAFT (dry_run=true).
+- Track D core VERIFIED: pygame-ce Surface renderer + message-feed panel + PNG export +
+  JSONL replay round-trip; 4 tests; evidence PNG at `artifacts/screenshots/demo_final_5x5.png`.
+- Full suite: **36 passed**. Total runtime deps installed via uv (py 3.13).
+- NOT done: orchestrator/LLM (Track C), live GUI window, Google Cloud project, cloud deploy.
 
 ### 2026-07-02 — foundation agent (Claude, main chat)
 - Created full foundation: `docs/` (declaration, rules, architecture, environment, PRD +

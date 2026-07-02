@@ -9,11 +9,11 @@
 
 | Track | Agent role | Owned paths | Task file | Status | Blocked by |
 |---|---|---|---|---|---|
-| A | Engine dev | `src/engine/`, `src/common/`, `tests/engine/` | `tasks/TRACK_A_game_engine.md` | ⬜ | — |
-| B | MCP dev | `src/servers/`, `tests/mcp/` | `tasks/TRACK_B_mcp_servers.md` | ⬜ | — |
-| C | Agents/LLM dev | `src/agents/`, `src/orchestrator.py`, `tests/orchestrator/` | `tasks/TRACK_C_agents_llm.md` | ⬜ | SP-1 (A), SP-2 (B) |
-| D | GUI dev | `src/gui/`, `artifacts/` | `tasks/TRACK_D_gui.md` | ⬜ | SP-1 event schema only |
-| E | Reporting dev | `src/reporting/`, secrets setup (out of repo) | `tasks/TRACK_E_reporting_gmail.md` | ⬜ | — |
+| A | Engine dev | `src/engine/`, `src/common/`, `tests/engine/` | `tasks/TRACK_A_game_engine.md` | ✅ 2026-07-02 (21 tests) | — |
+| B | MCP dev | `src/servers/`, `tests/mcp/` | `tasks/TRACK_B_mcp_servers.md` | ✅ 2026-07-02 (6 tests + live :8001 HTTP smoke) | — |
+| C | Agents/LLM dev | `src/agents/`, `src/orchestrator.py`, `tests/orchestrator/` | `tasks/TRACK_C_agents_llm.md` | ⬜ **UNBLOCKED** | needs LLM API key (ask user) |
+| D | GUI dev | `src/gui/`, `artifacts/` | `tasks/TRACK_D_gui.md` | 🔵 core done (render/export/replay; live window untested, no pause/step yet) | — |
+| E | Reporting dev | `src/reporting/`, secrets setup (out of repo) | `tasks/TRACK_E_reporting_gmail.md` | 🔵 code done (5 tests); E1 Google Cloud setup + OAuth run pending (manual, with user) | E1 user session |
 | F | Cloud/sec ops | `deploy/`, `docs/RUNBOOK_cloud.md` | `tasks/TRACK_F_cloud_security.md` | ⬜ | SP-3 (local E2E) |
 
 ## Wave plan
@@ -27,9 +27,9 @@
 | SP | Status | Posted by | Date |
 |---|---|---|---|
 | SP-0 config/rules/report schemas | ✅ frozen (docs committed) | foundation | 2026-07-02 |
-| SP-1 engine interfaces | ⬜ | | |
-| SP-2 MCP tool signatures | ✅ pre-frozen in PRD_mcp_servers §2 (B may refine names before first C commit) | foundation | 2026-07-02 |
-| SP-3 local E2E green | ⬜ | | |
+| SP-1 engine interfaces | ✅ FROZEN — `src/common/schemas.py` + `Engine`/`SeriesManager`/`Policy` in `src/engine/` | Track A | 2026-07-02 |
+| SP-2 MCP tool signatures | ✅ FROZEN — implemented in `src/servers/base_server.py`, client wrapper `src/servers/client.py` | Track B | 2026-07-02 |
+| SP-3 local E2E green | ⬜ (Track C next: orchestrator + LLM) | | |
 
 ## Contract changes
 

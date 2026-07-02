@@ -14,13 +14,13 @@ draft-mode safety net.
        Auth Platform: External, contacts → Data access scopes `gmail.modify` + `calendar` →
        Desktop OAuth client → download `credentials.json` → secrets dir OUTSIDE repo →
        add both members as Test users.
-- [ ] E2. `reporting/auth.py` — course-guide credential flow (token cache, refresh, browser
+- [x] E2. `reporting/auth.py` — course-guide credential flow (token cache, refresh, browser
        fallback); paths from env/config; helpful error for guide-§22 pitfalls.
-- [ ] E3. `reporting/models.py` — pydantic models for Internal + Bonus reports, mirroring
+- [x] E3. `reporting/models.py` — pydantic models for Internal + Bonus reports, mirroring
        REPORTING_SPEC byte-for-byte (keys, nesting, types).
-- [ ] E4. `reporting/builder.py` — `SubGameRecord[] + Totals + config identity → report`;
+- [x] E4. `reporting/builder.py` — `SubGameRecord[] + Totals + config identity → report`;
        **validity guard: exactly 6 valid sub-games or raise**.
-- [ ] E5. `reporting/gmail_sender.py` — send via `users().messages().send`; body =
+- [x] E5. `reporting/gmail_sender.py` — send via `users().messages().send`; body =
        `json.dumps(report, ensure_ascii=False, indent=2)` ONLY; subject+recipient from
        config; `dry_run=true` → create **draft** instead (course-video pattern).
 - [ ] E6. Smoke script: `uv run python -m src.reporting.smoke` → OAuth flow → draft with
@@ -29,7 +29,7 @@ draft-mode safety net.
        `rmisegal+uoh26b@gmail.com` (leave `dry_run=true` until final submission run).
 - [ ] E8. Bonus path: builder for Inter-Group JSON + reconcile helper (byte-diff two
        payloads; refuse send unless identical & `mutual_agreement=true`).
-- [ ] E9. `.gitignore` audit: `.env`, `*credentials*.json`, `*token*.json` excluded; add
+- [x] E9. `.gitignore` audit: `.env`, `*credentials*.json`, `*token*.json` excluded; add
        `docs/` note where secrets live.
 
 ## Definition of Done
