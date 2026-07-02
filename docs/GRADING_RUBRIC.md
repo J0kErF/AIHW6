@@ -31,9 +31,11 @@
 
 ## D. Cloud & security
 
-- [ ] Two public HTTPS URLs; reachable from open internet (verified off-network).
-- [ ] Token auth + documented revoke; 401 proof captured.
-- [ ] Approach-1/3 posture: no local inbound exposure; Ollama never raw-exposed.
+- [x] Two public HTTPS URLs; reachable from open internet — hw6-cop-mcp / hw6-thief-mcp
+      .onrender.com; full E2E series completed against them (2026-07-02).
+- [x] Token auth + documented revoke; wrong-token rejection captured in
+      `artifacts/security/cloud_verify_20260702_210304.txt`.
+- [x] Approach-1/3 posture: local client outbound-only; no inbound ports; Ollama unused.
 
 ## E. Reporting
 

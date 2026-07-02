@@ -42,9 +42,9 @@
 ## P7 — Cloud & security (Track F) 🔵 fully scripted, one manual step left
 - [x] Deploy kit: `deploy/Dockerfile` + `deploy/entrypoint.py` + `render.yaml` blueprint + `docs/RUNBOOK_cloud.md`
 - [x] Acceptance battery `scripts/cloud_verify.py` — PASSED against live local servers (evidence in `artifacts/security/`)
-- [ ] **USER (~2 min): create Render.com account** → then Blueprint deploy per RUNBOOK §1
-- [ ] Set tokens on platform + `.env`; update the two URLs in config.json
-- [ ] Re-run cloud_verify from open network + cloud E2E series + archive logs
+- [x] Render account + API key (user); services deployed programmatically via scripts/render_deploy.py
+- [x] Tokens set on platform + .env; public URLs written to config.json automatically
+- [x] cloud_verify PASSED vs public URLs + cloud E2E series (cop 90:40, 169 turns, 0 tech losses) — logs archived
 
 ## P8 — Reporting (Track E) 🔵 code done 2026-07-02
 - [x] Google Cloud project + OAuth client + test users (user, 2026-07-02); Gmail API enabled after 403 catch

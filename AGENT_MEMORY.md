@@ -67,7 +67,7 @@
 | Track C — agents/orchestrator | ✅ core done — 14 tests + REAL DeepSeek 2×2 series (0 tech losses/fallbacks); open: real-LLM 3×3–5×5 runs, optional Q-learn | 2026-07-02 |
 | Track D — GUI | 🔵 core done (render/PNG/replay-roundtrip, 4 tests); live window + pause/step + replay CLI pending | 2026-07-02 |
 | Track E — reporting/Gmail | ✅ E2E PROVEN — OAuth token cached, Gmail API enabled, real DRAFT created (r-2536605247747267589, pure JSON). Real send deferred to final graded run (dry_run flip) | 2026-07-02 |
-| Track F — cloud deploy | 🔵 fully scripted (Dockerfile+render.yaml+runbook+verify battery passed locally); BLOCKED on user: Render account (~2 min) | 2026-07-02 |
+| Track F — cloud deploy | ✅ LIVE — hw6-cop-mcp/hw6-thief-mcp.onrender.com deployed via API; security battery passed vs public URLs; CLOUD E2E series cop 90:40, 169 turns, 0 tech losses | 2026-07-02 |
 | Real-LLM 5×5 rehearsal over :8001/:8002 | ✅ cop 90 : thief 40, 166 turns, 0 tech losses | 2026-07-02 |
 | Analysis: vision sweep + Q-learn curve | ✅ `artifacts/analysis/` | 2026-07-02 |
 | README scientific report | ✅ v1 complete with real data (refresh cloud §6 after deploy) | 2026-07-02 |
@@ -107,18 +107,31 @@
 
 ## ▶️ Next Actions (whoever reads this next)
 
-ONE user-manual step remains; everything else is scripted:
-1. **USER: Render API key** — dashboard → Account Settings → API Keys → create →
-   add `RENDER_API_KEY=rnd_...` to `aihw6/.env`. Then run
-   `uv run python scripts/render_deploy.py` (creates both services from the GitHub repo,
-   sets tokens, waits for live, writes URLs into config.json), then
-   `uv run python scripts/cloud_verify.py` and
-   `uv run python -m src.orchestrator --no-email` (cloud E2E; archive outputs).
-2. After cloud: refresh README §6 cloud lines, GRADING_RUBRIC self-audit, final graded
-   run with `report.dry_run=false` (real email to rmisegal+uoh26b@gmail.com), push,
-   share repo with rmisegal@gmail.com, fill moamteam-ex06.pdf, tag `submission-hw6`.
+EVERYTHING IS BUILT AND PROVEN. Submission tail only (needs explicit user 'go'):
+1. **Final graded run** (user must say go — sends a REAL email to
+   rmisegal+uoh26b@gmail.com): set `report.dry_run=false` in config.json, ensure both
+   Render services are warm (hit each URL once; free tier sleeps ~15 min idle), run
+   `uv run python -m src.orchestrator` — series + auto-email in one shot.
+2. Then: tag `submission-hw6` + push; user shares repo with rmisegal@gmail.com on GitHub;
+   user fills `moamteam-ex06.pdf` template (exercise 06, group moamteam, both students,
+   repo URL, honest self-score) and each member uploads to Moodle.
+3. Note: Render free tier services sleep when idle — for grading period consider a keep-
+   warm ping or accept the ~50s cold start (turn_timeout_s=180 absorbs it).
 
 ## 📝 Session Log (newest first)
+
+### 2026-07-02 — CLOUD LIVE: deploy + public verify + cloud E2E (Claude, main chat)
+- User added RENDER_API_KEY to .env → `scripts/render_deploy.py` created both services
+  from the GitHub repo, set tokens, both deploys LIVE; URLs auto-written to config.json
+  (hw6-cop-mcp / hw6-thief-mcp .onrender.com, /mcp path).
+- VERIFIED: `cloud_verify.py` vs PUBLIC URLs — wrong-token rejected both, 50-msg order
+  preserved (~27s RTT), verify_state OK → `artifacts/security/cloud_verify_20260702_210304.txt`.
+- VERIFIED: CLOUD E2E series (real DeepSeek, local client outbound-only): cop 4 : thief 2,
+  totals 90:40, 169 turns, 0 technical losses, 1 fallback, 169/169 verify OK; mean belief
+  err 0.83, exact 37%. Transcript: `artifacts/transcripts/deepseek_cloud_5x5_transcript.md`;
+  6 PNGs; full log `artifacts/logs/run_20260702_210335*.jsonl`.
+- README abstract/§5/§6 refreshed with cloud numbers; GRADING_RUBRIC: all items ✅
+  except bonus (waived). Remaining: final graded email run (user go), tag, Moodle PDF.
 
 ### 2026-07-02 — Repo push + Google E2E + Render automation (Claude, main chat)
 - Pushed all commits to https://github.com/J0kErF/AIHW6 (origin/main tracking).

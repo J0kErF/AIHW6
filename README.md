@@ -19,10 +19,11 @@ OpenAI-compatible API), interprets each message into a belief distribution over 
 opponent's position, and applies a legality-guarded action to a deterministic game
 engine. The full autonomous series — 6 valid sub-games with technical-loss voiding,
 per-turn integrity verification, live GUI evidence, and a JSON-only Gmail report — runs
-unattended. A real DeepSeek series over live MCP servers on 5×5 produced a genuinely
-contested outcome (cop 4 : thief 2, 166 turns, 0 technical losses, 98.8% of LLM replies
-directly legal), and controlled experiments quantify how vision radius drives belief
-error, plus a tabular Q-learning baseline that more than doubles its mean episode reward.
+unattended. The graded configuration ran end-to-end: a real DeepSeek series against the
+**publicly deployed MCP servers on Render** produced a genuinely contested outcome
+(cop 4 : thief 2, 169 turns over the open internet, 0 technical losses, 99.4% of LLM
+replies directly legal), and controlled experiments quantify how vision radius drives
+belief error, plus a tabular Q-learning baseline that more than doubles its mean reward.
 
 ## 2. Formal model — Dec-POMDP
 
@@ -98,11 +99,12 @@ pipeline voided the game, we retuned the budget, and the series completed cleanl
 
 ## 5. Experiments & results
 
-**Live autonomous series (real DeepSeek, real MCP servers over HTTP).**
+**Live autonomous series (real DeepSeek, real MCP servers).**
 
 | Run | Result | Integrity |
 |---|---|---|
-| 5×5, radius 2 | cop 4 : thief 2 (two move-limit escapes, one barrier) → totals 90:40 | 166 turns, 0 technical losses, 2 guarded fallbacks, 166/166 verify_state OK |
+| **5×5 vs PUBLIC CLOUD servers** (Render, hybrid Approach 3) | cop 4 : thief 2 (two 25-round escapes, barriers played) → totals 90:40 | 169 turns over the open internet, 0 technical losses, 1 guarded fallback, 169/169 verify_state OK; mean belief err 0.83, exact inference 37% |
+| 5×5, localhost :8001/:8002 | cop 4 : thief 2 (two move-limit escapes, one barrier) → totals 90:40 | 166 turns, 0 technical losses, 2 guarded fallbacks, 166/166 verify_state OK |
 | 2×2 (ladder stage 1) | cop 6 : thief 0, all captures ≤2 rounds | 18 turns, 0 losses, 0 fallbacks — trivially cop-favored, as expected |
 
 **Ambiguity vs vision radius** (`scripts/vision_sweep.py`, 12 games/cell, deterministic
@@ -125,12 +127,15 @@ mean episode reward improved **6.81 → 14.81** (first vs last decile).
   turns) and `deepseek_2x2_transcript.md`.
 - **CLI/JSONL logs** (per-turn actor, action, belief error, verify_ok, message; per-call
   LLM latency/tokens): `artifacts/logs/run_20260702_132018*.jsonl`.
-- **Security battery output**: `artifacts/security/cloud_verify_*.txt` (wrong-token
-  rejection, 50-message ordering, state verification — rerun against cloud URLs on deploy).
-- **Report email**: JSON-only body per spec §9 (see `docs/REPORTING_SPEC.md`); sender
-  runs in draft mode until the final graded run.
-- Cloud URLs + cloud run logs: *pending platform account* — see `docs/RUNBOOK_cloud.md`
-  (everything scripted; one browser signup remains).
+- **Public cloud deployment**: `https://hw6-cop-mcp.onrender.com/mcp` and
+  `https://hw6-thief-mcp.onrender.com/mcp` (Render, Docker, deployed programmatically by
+  `scripts/render_deploy.py`); cloud series logs `artifacts/logs/run_20260702_210335*.jsonl`,
+  transcript `artifacts/transcripts/deepseek_cloud_5x5_transcript.md`.
+- **Security battery output**: `artifacts/security/cloud_verify_20260702_210304.txt` —
+  wrong-token rejection on both PUBLIC URLs, 50-message ordering, state verification.
+- **Report email**: Gmail API (OAuth Desktop client + cached token) verified end-to-end —
+  JSON-only draft created autonomously; the graded run flips `report.dry_run` and sends
+  to `rmisegal+uoh26b@gmail.com`.
 
 ## 7. Reproduce
 

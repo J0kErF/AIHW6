@@ -1,0 +1,175 @@
+# Real DeepSeek transcript — 5x5 series vs PUBLIC cloud MCP servers (Render, 2026-07-02)
+
+cop https://hw6-cop-mcp.onrender.com/mcp | thief https://hw6-thief-mcp.onrender.com/mcp
+
+169 turns, 6 valid sub-games (cop 4:2), 0 technical losses, 1 guarded fallback, all verify_state OK.
+
+- **g1 t0 thief** (belief err 1): I'm heading east, hope you're not too close behind!
+- **g1 t1 cop** (belief err 1): Heading east as well. Let's see if we meet soon.
+- **g1 t2 thief** (belief err 1): I'm cutting through the northwest corner, you'll never catch me there!
+- **g1 t3 cop** (belief err 1): Northwest corner is a dead end, thief. I'm closing in.
+- **g1 t4 thief** (belief err 3): Dead end? I'm already slipping out the back while you're still staring at the walls.
+- **g1 t5 cop** (belief err 1): Slipping out the back? I doubt it—your last move put you near the center, and I'm cutting off your escape.
+- **g1 t6 thief** (belief err 1): You think I'm near the center? I'm already at the edge, laughing as you waste time chasing shadows.
+- **g1 t7 cop** (belief err 1): You're trying to make me chase the edge, but your last known direction was south of center. I'm moving to cut you off.
+- **g1 t8 thief** (belief err 2): South of center? I'm already gone, heading for the opposite side while you block empty space.
+- **g1 t9 cop** (belief err 3): You keep saying you're heading to the edge, but your actual path suggests you're circling back toward the center. I'm coming down to catch you.
+- **g1 t10 thief** (belief err 1): Circling back? I'm already past the edge you think I'm near—you're chasing ghosts in the middle.
+- **g1 t11 cop** (belief err 0): Your words are too defensive for someone truly at the edge. You're baiting me away from the center where you're hiding.
+- **g1 t12 thief** (belief err 0): If I were hiding in the center, I'd be quiet—not taunting you from the corner. Check your map again, officer.
+- **g1 t13 cop** (belief err 0): Your taunts are too loud for someone who's actually in the corner. You want me to believe you're there, but your last visible move was away from the edges. I'm heading south to cut off your retreat.
+- **g1 t14 thief** (belief err 2): Cut off my retreat? You're a step behind—I'm already circling around through the south while you block the center.
+- **g1 t15 cop** (belief err 0): You're trying to make me think you're in the south, but I know you're actually still near the center. I'm coming down to intercept you.
+- **g1 t16 thief** (belief err 2): You're so sure about the center? I'm already slipping south while you're second-guessing yourself.
+- **g1 t17 cop** (belief err 2): Your insistence on the south is a clear tell. I'm moving south to find you.
+- **g1 t18 thief** (belief err 3): South is a dead end, officer—I'm already east and watching you chase shadows.
+- **g1 t19 cop** (belief err 0): East, you say? I've already blocked the eastern corridor. You're cornered in the center.
+- **g1 t20 thief** (belief err 0): A barrier in the east? I'm not even there—I'm northwest, and you just wasted your last trap.
+- **g1 t21 cop** (belief err 0): Northwest, huh? Then I suppose you won't mind me cutting off that route too.
+- **g1 t22 thief** (belief err 0): Cut off whatever you like—I'm already gone south while you're busy fumbling with barriers.
+- **g1 t23 cop** (belief err 0): South again? Your story flips every turn—I'm closing in from the west, where the only way out is through me.
+- **g2 t24 thief** (belief err 0): You're so confident in the west, but I'm already slipping east—your barriers won't catch me this time.
+- **g2 t25 cop** (belief err 0): You're right, I was looking west—but now I see you clearly. That eastward slip is just a little too obvious for someone who wants to avoid capture.
+- **g2 t26 thief** (belief err 2): You see me clearly? Then you should know I'm not going east at all—I'm doubling back south while you waste time staring at the wrong path.
+- **g2 t27 cop** (belief err 0): Cute double-bluff, but I can see you right now—you're not going south, you're frozen in place trying to talk your way out. I'm coming straight down.
+- **g2 t28 thief** (belief err 1): Frozen? Hardly—I'm already gone. You're chasing shadows while I slip east under your nose.
+- **g2 t29 cop** (belief err 2): Nice try, but you've been consistent about 'east' since the start—too consistent. I think you're actually tucked away in the southwest corner, and I'm about to prove it.
+- **g2 t30 thief** (belief err 0): Southwest? You're reaching. I'm not hiding in a corner—I'm already moving north while you waste another turn guessing.
+- **g2 t31 cop** (belief err 0): You keep saying 'north,' but your real pattern is a slow drift to the southwest to avoid my sweep. I'm cutting you off.
+- **g2 t32 thief** (belief err 1): Southwest? You're just guessing wildly now. I've been circling back east the whole time—you'll never catch me.
+- **g2 t33 cop** (belief err 1): I've been herding you into that southwest corner all along—now watch as I seal off your last escape route.
+- **g2 t34 thief** (belief err 1): You keep staring at the southwest, but I'm already three steps ahead—east is where the real escape is, and you're out of time to adjust.
+- **g2 t35 cop** (belief err 0): Your 'east' is just a bluff to pull me away from the southwest. I'm blocking your path right now.
+- **g2 t36 thief** (belief err 1): You're so convinced it's all a bluff that you'll never see me actually slip east while you waste barriers on the southwest.
+- **g2 t37 cop** (belief err 1): Your east talk is just noise—I can feel you're trying to draw me away from the southwest. I'm moving down to tighten the noose.
+- **g2 t38 thief** (belief err 2): You're so focused on the southwest that you've left the entire east side wide open—I'll be gone before you finish setting up.
+- **g2 t39 cop** (belief err 1): I've already cut off your escape to the east—my barrier at [1,4] blocks that route. You're cornered in the southwest, and I'm closing in.
+- **g2 t40 thief** (belief err 1): A barrier at [1,4]? That's cute, but I'm not even near there—I'm already slipping east while you waste time imagining my position.
+- **g2 t41 cop** (belief err 1): You keep insisting you're east, but your moves have been consistent with a southwest retreat. I'm cutting off the south now.
+- **g2 t42 thief** (belief err 1): You're so obsessed with the southwest that you're ignoring the obvious—I've been moving west this whole time, and you'll never catch me.
+- **g2 t43 cop** (belief err 1): Your story keeps shifting—first east, now west. I'm moving north to cut off your retreat into the top row.
+- **g2 t44 thief** (belief err 1): You're right, I've been all over the place—but north is the one direction you'll never guess I'm heading. Good luck catching me.
+- **g2 t45 cop** (belief err 1): You've been lying all game, so why would I believe you're going north? I'm moving south to seal the border.
+- **g2 t46 thief** (belief err 1): South? I'm already past the midline, and your barriers are useless here. Enjoy chasing shadows.
+- **g2 t47 cop** (belief err 1): You claim to be past the midline, but your message is too convenient. I'm moving north to check the top row—just in case.
+- **g2 t48 thief** (belief err 1): Past the midline? I'm practically in the top-left corner already. You'll never close the gap in time.
+- **g2 t49 cop** (belief err 4): You've been claiming opposite corners all game, but the top-left is the only one you haven't tried yet—so I'll head north and see if you're bluffing.
+- **g2 t50 thief** (belief err 1): North? I'm already at the bottom edge, and the clock is ticking. You'll never make it in time.
+- **g2 t51 cop** (belief err 1): You keep saying bottom edge, but you've been shifting your story every round. I'm moving south to cut you off.
+- **g2 t52 thief** (belief err 1): Cut me off? I'm not even near the bottom—I'm hiding in the northeast corner while you waste moves.
+- **g2 t53 cop** (belief err 1): Northeast corner? That's the third different corner you've claimed in as many turns. You're dancing around, but I'm closing in.
+- **g2 t54 thief** (belief err 1): Dancing around? I'm just warming up while you keep guessing wrong. The real question is whether you'll ever actually find me.
+- **g2 t55 cop** (belief err 1): Your evasiveness is telling—you're not committed to any corner because you're not in one. I'm moving east to narrow the field.
+- **g2 t56 thief** (belief err 1): East? You're chasing ghosts. I've been watching you from the west side this whole time.
+- **g2 t57 cop** (belief err 0): Then why are you suddenly so interested in my eastward move? If you were truly in the west, you'd be happy to see me go the other way.
+- **g2 t58 thief** (belief err 1): Your logic is flawed—I'm interested because you're predictable, not because I'm where you think. Keep heading east while I slip south.
+- **g2 t59 cop** (belief err 0): Slip south? You just told me you're in the west, now you're threatening south—your stories keep shifting. I'm cutting the distance diagonally.
+- **g2 t60 thief** (belief err 2): Diagonally? You're just spinning in place. I'm already two steps ahead of your geometry lesson.
+- **g2 t61 cop** (belief err 0): Your geometry lessons must have been in a different grid. I see you clearly now, and you're not two steps ahead—you're one step from capture.
+- **g2 t62 thief** (belief err 0): If you really saw me, you'd know I'm not where you're looking. Keep guessing—I'm enjoying the chase.
+- **g2 t63 cop** (belief err 0): I see you at [4,1] and you're out of room to run. Time's up, thief.
+- **g2 t64 thief** (belief err 2): You're looking at a ghost. I'm already moving while you're stuck in the past.
+- **g2 t65 cop** (belief err 1): Ghosts leave footprints. I'm closing in on the only exit you have left.
+- **g2 t66 thief** (belief err 1): Footprints? All you'll find is dust. I'm not where you think, and I'm not running out of grid.
+- **g2 t67 cop** (belief err 0): Dust doesn't talk, thief. Your words are just echoes from a corner I've already sealed.
+- **g2 t68 thief** (belief err 1): Echoes? You're the one chasing shadows. I'm three steps ahead and you're still guessing.
+- **g2 t69 cop** (belief err 1): Three steps ahead? I count zero. The walls are closing in and you're running out of board.
+- **g2 t70 thief** (belief err 2): You're counting on walls that don't exist. I'll slip right through your imaginary net.
+- **g2 t71 cop** (belief err 0): Your net is imaginary, but my barriers are real. One more turn and you'll hit the edge.
+- **g2 t72 thief** (belief err 0): Edge? I'm already past it. You're boxing in a ghost.
+- **g2 t73 cop** (belief err 0): A ghost can't run from a barrier that's already laid. Turn 25 is coming, and I'll be standing right where you are now.
+- **g3 t74 thief** (belief err 0): You're so close I can almost hear your heartbeat, but a ghost knows when to vanish into the shadows.
+- **g3 t75 cop** (belief err 0): A ghost can't hide forever, and I always catch what I hunt.
+- **g3 t76 thief** (belief err 0): Blind faith won't help you when I'm already three steps ahead of your clumsy trap.
+- **g3 t77 cop** (belief err 1): Your shadow betrays you — I see the dust you kicked up heading east.
+- **g3 t78 thief** (belief err 2): You're chasing dust while I'm already weaving through the western alleys — enjoy the wild goose chase.
+- **g3 t79 cop** (belief err 1): You weave through alleys, but I see the pattern in your steps — west it is, then.
+- **g3 t80 thief** (belief err 1): Patterns are for the predictable, and I'm anything but — enjoy staring at the empty west while I dance north.
+- **g3 t81 cop** (belief err 0): North, you say? Then I'll just follow the sound of your bravado — it echoes louder than your footsteps.
+- **g3 t82 thief** (belief err 0): Your ears must be ringing from all that false confidence — I'm not where you think, and the real game is just beginning.
+- **g3 t83 cop** (belief err 1): False confidence? I've been herding you since round one — your only escape is the one I've already blocked.
+- **g3 t84 thief** (belief err 1): Your herding is just wishful thinking — I'm already slipping through gaps you haven't even noticed.
+- **g3 t85 cop** (belief err 1): Gaps? I see every cell you've touched, thief — your path is written in the dust you leave behind.
+- **g3 t86 thief** (belief err 1): Dust? I've been leaving false trails since the start — enjoy chasing the ghost you think you've cornered.
+- **g3 t87 cop** (belief err 0): False trails are still trails, and I've been reading your moves like a map. Cornered or not, I'm closing in.
+- **g3 t88 thief** (belief err 0): You're reading my moves? Then you know I'm long gone from where you're looking — keep chasing shadows.
+- **g3 t89 cop** (belief err 1): Shadows don't leave heat signatures, thief. I've got your last three moves triangulated — you're not as slippery as you think.
+- **g3 t90 thief** (belief err 1): Triangulated? You're just guessing blind — I've been looping back while you stare at the wrong coordinates.
+- **g3 t91 cop** (belief err 1): Looping back? That's exactly what I'd expect from someone who's run out of room. You're in the bottom row now — I can feel it.
+- **g3 t92 thief** (belief err 1): Bottom row? Bold guess from someone who's been wrong all game. I'm already two steps ahead, dancing where you can't reach.
+- **g3 t93 cop** (belief err 0): Two steps ahead? Then you won't mind if I cut off your escape to the north. I'm already setting up the net.
+- **g3 t94 thief** (belief err 1): Cut off the north? You're sealing an empty quadrant while I slip south into the open. Enjoy fencing in ghosts.
+- **g3 t95 cop** (belief err 1): South is exactly where I'd expect a cornered rat to run. I'm already there.
+- **g3 t96 thief** (belief err 1): You're so convinced I'm south that you're probably heading that way yourself. I'm going to keep spinning circles around your empty traps.
+- **g3 t97 cop** (belief err 0): You talk about spinning circles, but your pattern is clear—you're trapped in the north. I'm closing in.
+- **g3 t98 thief** (belief err 0): North is a dead end you've already sealed with barriers. I'm actually toying with you from the southeast corner.
+- **g3 t99 cop** (belief err 1): Southeast corner? You're just trying to draw me away from the real action. I'm not buying it.
+- **g3 t100 thief** (belief err 1): You're right, I'm not in the southeast. But you're also wrong about the north—I'm somewhere you'd never guess.
+- **g3 t101 cop** (belief err 2): Your word games won't save you. I see the pattern—you're circling back toward the center, and I'm already cutting you off.
+- **g3 t102 thief** (belief err 0): The center is the last place I'd be—you're chasing ghosts while I slip through the edge.
+- **g3 t103 cop** (belief err 0): Edge, you say? I've already blocked the easy exits. Your path is narrowing.
+- **g3 t104 thief** (belief err 2): You think you've blocked the edge? I'm already gone—you're just talking to the wind.
+- **g3 t105 cop** (belief err 0): Your wind is just hot air. I can see you at [1,2] — your bluff ends now.
+- **g3 t106 thief** (belief err 0): Seeing isn't believing, officer—you're looking at a mirage while I vanish into the shadows.
+- **g3 t107 cop** (belief err 2): Your shadows have a pattern, and I've just sealed your last escape route. The net is closing.
+- **g3 t108 thief** (belief err 1): A net needs a catch, and you're still guessing. I'm already past your so-called seal.
+- **g3 t109 cop** (belief err 1): You're right that I'm guessing, but I'm narrowing it down. Each step you take leaves a trace.
+- **g3 t110 thief** (belief err 1): Trace this—I'm heading straight for your blind spot while you keep chasing echoes.
+- **g3 t111 cop** (belief err 2): Your blind spot is shrinking, and I've already mapped every shadow. The next step you take will be your last.
+- **g3 t112 thief** (belief err 1): Bold words from someone who still doesn't know where I am. Enjoy the empty space.
+- **g3 t113 cop** (belief err 1): Empty space? I'm standing right on top of it now. The only thing empty here is your escape plan.
+- **g3 t114 thief** (belief err 2): You're standing on top of what? A memory? I'm already three steps ahead, and your barriers are just a joke.
+- **g3 t115 cop** (belief err 1): A memory? Let me refresh yours—I've got barriers left, and this grid is small. You can't run forever.
+- **g3 t116 thief** (belief err 0): A small grid is just a small room when you're the one about to get cornered. I'm not running—I'm circling.
+- **g3 t117 cop** (belief err 1): Circling? Then you're predictable. I'll cut the circle short.
+- **g3 t118 thief** (belief err 1): You keep talking about cutting circles, but you're still chasing shadows. Good luck finding me before time runs out.
+- **g3 t119 cop** (belief err 1): Shadows don't leave footprints. I'm closing in, and your words are getting shorter.
+- **g3 t120 thief** (belief err 1): Footprints? I'm leaving them everywhere just to watch you chase the wrong ones. Tick tock, cop.
+- **g3 t121 cop** (belief err 0): You're right about one thing—time is short. But I see you clearly now, and you're not as fast as you think.
+- **g3 t122 thief** (belief err 0): Seeing and being fast are two different things. You're still one step behind, and the clock is almost out.
+- **g3 t123 cop** (belief err 1): One step behind? I'm standing exactly where you were last turn. The clock's almost out, but that's plenty of time to finish this.
+- **g4 t124 thief** (belief err 1): Ha, you think you know where I am? I'm miles away, you'll never catch me.
+- **g4 t125 cop** (belief err 3): Big talk from someone who's probably hiding in a corner. Let's see how confident you are when I close in.
+- **g4 t126 thief** (belief err 0): Corner? I'm in the open, you're the one stumbling around blind. Keep guessing.
+- **g4 t127 cop** (belief err 2): The open, huh? Then you won't mind me heading north to say hello. Let's test that bravado.
+- **g4 t128 thief** (belief err 1) [guarded]: North is a dead end, friend. I'm already circling behind you while you waste time chasing shadows.
+- **g4 t129 cop** (belief err 3): Circling behind me? Then why do I hear footsteps scurrying east? Let's find out.
+- **g4 t130 thief** (belief err 1): East? You're hearing echoes of your own clumsy footsteps. I'm not where you think, and you're running out of moves.
+- **g4 t131 cop** (belief err 1): If you're behind me, then you won't mind me stepping west to cut off your retreat. Let's see who's really cornered.
+- **g4 t132 thief** (belief err 0): West? That's the opposite of where I am. You're just guessing now, and I'm already gone.
+- **g4 t133 cop** (belief err 1): You protest too much about west. If you're not there, then you must be south or east. I'll take the direct path and cut you off.
+- **g4 t134 thief** (belief err 1): South and east? You're chasing ghosts. I'm already far from both, and your barriers are just making a cage for yourself.
+- **g4 t135 cop** (belief err 0): A cage needs a prisoner, and I see you clearly now. You're not as far as you pretend.
+- **g4 t136 thief** (belief err 1): Seeing is believing, and you're blind. My footprints lead nowhere you've barricaded.
+- **g4 t137 cop** (belief err 2): Your footprints vanish near the south wall, and you've been quiet about that direction. I'm closing in.
+- **g4 t138 thief** (belief err 1): South wall? I haven't been near it all game. You're chasing shadows while I circle around you.
+- **g4 t139 cop** (belief err 0): Circle all you like, but I see you at [0,3] and I'm moving to cut off your retreat. Your denials only confirm you're cornered.
+- **g4 t140 thief** (belief err 0): You're looking at the wrong spot—I'm already gone. Enjoy your empty corner.
+- **g4 t141 cop** (belief err 0): You can't vanish from a cage I'm sealing. The only empty corner will be yours.
+- **g4 t142 thief** (belief err 1): A cage needs walls, not just a boast. I'm already past your imaginary barriers.
+- **g4 t143 cop** (belief err 1): You keep insisting you're past me, but you're still inside the grid. I'm moving south to cut off your escape.
+- **g4 t144 thief** (belief err 2): South is exactly where you'd expect me to go. Try north—I dare you.
+- **g4 t145 cop** (belief err 0): You're daring me north while you're still at [0,3]? I'm closing in from the east.
+- **g4 t146 thief** (belief err 0): You think I'm still there? Watch me slip through your fingers again.
+- **g4 t147 cop** (belief err 0): Your fingers are short, and I'm already tightening the net from above. The north exit is sealed.
+- **g4 t148 thief** (belief err 1): Seal all you want—I'm not heading north. I'm already weaving east while you chase shadows.
+- **g4 t149 cop** (belief err 1): East? Then I'll meet you there. You can't weave through a wall.
+- **g4 t150 thief** (belief err 1): You keep guessing east, but I'm already gone. Your walls can't trap what you can't catch.
+- **g4 t151 cop** (belief err 1): Your words are as empty as your escape routes. I'm already cutting off the west, and the net tightens.
+- **g4 t152 thief** (belief err 1): Cut off the west all you like—I'm already circling south through the gaps you haven't blocked yet.
+- **g4 t153 cop** (belief err 2): South? Good, I'm coming down to greet you. The only gap left is the one I'm about to fill.
+- **g4 t154 thief** (belief err 1): You're chasing ghosts down south—I'm already northeast of where you think. Keep filling gaps; I'll keep finding new ones.
+- **g4 t155 cop** (belief err 0): Northeast? That's a bold claim for someone whose last known position was south of me. I'll take the high ground and see for myself.
+- **g4 t156 thief** (belief err 1): High ground? The only thing high here is your confidence. I'm already moving where you least expect.
+- **g4 t157 cop** (belief err 0): Confidence is all I need when I can see you clearly. You're not as elusive as you think.
+- **g4 t158 thief** (belief err 0): Seeing me clearly? Then you'd know I'm not where you're looking. I'm already three steps ahead of your barriers and your guesses.
+- **g4 t159 cop** (belief err 0): Three steps ahead? You've been backtracking this whole time. Let's see how far you get when I close the net.
+- **g4 t160 thief** (belief err 0): Closing the net? You're the one stuck in a corner while I dance through the gaps. Better luck next turn.
+- **g5 t161 thief** (belief err 0): I'm heading toward the open corner, hope you're stuck on the other side!
+- **g5 t162 cop** (belief err 0): I see you clearly now, and that gap is about to close. Enjoy your dance while it lasts.
+- **g5 t163 thief** (belief err 0): You think you see me? I'm already gone, chasing shadows while you waste your barriers.
+- **g5 t164 cop** (belief err 0): You're already cornered, and the only way out is through me. That 'open corner' is a trap.
+- **g6 t165 thief** (belief err 0): Nice bluff, but I'm nowhere near that open corner you're so worried about. Maybe try looking behind you instead.
+- **g6 t166 cop** (belief err 1): I've got your measure, thief. That taunt only confirms you're near the center, and I'm closing in.
+- **g6 t167 thief** (belief err 0): If I were near the center, why would I be sweating a barrier you haven't even placed yet? You're the one chasing shadows.
+- **g6 t168 cop** (belief err 0): Your words are as transparent as your position. I'm right on your tail.
