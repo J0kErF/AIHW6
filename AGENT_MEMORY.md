@@ -42,8 +42,11 @@
 - Assignment: ex06 "Dual AI agent race via MCP servers" (spec PDF in parent folder).
 - Grade target: **98%** → treat spec "recommended" items as mandatory (see `docs/GRADING_RUBRIC.md`).
 - **Bonus is WAIVED** (window closed for students — user confirmed 2026-07-02). Do not build bonus features.
-- Git: **pushed to `https://github.com/J0kErF/AIHW6`** (user-provided, 2026-07-02);
-  `origin/main` tracking set. Still to do at submission: share repo with `rmisegal@gmail.com`.
+- Git: **pushed to `https://github.com/J0kErF/AIHW6`**; `rmisegal@gmail.com` added as
+  collaborator by the user (2026-07-02).
+- **Self-score approved by user: 93** (2026-07-02) — goes into moamteam-ex06.pdf.
+- **Final graded run authorized by user** (2026-07-02): dry_run=false, real email to
+  rmisegal+uoh26b@gmail.com.
 - Google OAuth (E1): user created the Cloud project + Desktop client; `credentials.json`
   moved to `C:/Users/moham/secrets/moamteam-google/` (paths in .env, forward slashes —
   backslash paths in .env corrupt via `\t`→TAB, learned the hard way).
@@ -107,18 +110,26 @@
 
 ## ▶️ Next Actions (whoever reads this next)
 
-EVERYTHING IS BUILT AND PROVEN. Submission tail only (needs explicit user 'go'):
-1. **Final graded run** (user must say go — sends a REAL email to
-   rmisegal+uoh26b@gmail.com): set `report.dry_run=false` in config.json, ensure both
-   Render services are warm (hit each URL once; free tier sleeps ~15 min idle), run
-   `uv run python -m src.orchestrator` — series + auto-email in one shot.
-2. Then: tag `submission-hw6` + push; user shares repo with rmisegal@gmail.com on GitHub;
-   user fills `moamteam-ex06.pdf` template (exercise 06, group moamteam, both students,
-   repo URL, honest self-score) and each member uploads to Moodle.
-3. Note: Render free tier services sleep when idle — for grading period consider a keep-
-   warm ping or accept the ~50s cold start (turn_timeout_s=180 absorbs it).
+**SUBMITTED (code side). 2026-07-02: final graded run SENT — Gmail id 19f2421cc04ea7c1,
+cop 105 : thief 35, 6 valid sub-games (1 technical loss voided mid-run and re-run).**
+Remaining (user, offline): fill `moamteam-ex06.pdf` (exercise 06, group moamteam, both
+students, repo https://github.com/J0kErF/AIHW6, self-score **93**) — EACH member uploads
+to Moodle separately. Collaborator rmisegal@gmail.com already added.
+Note: config.report.dry_run flipped BACK to true after the send (safety: re-runs create
+drafts, never re-email the lecturer). Render free tier sleeps when idle (~50s cold start
+if the grader probes; turn_timeout_s=180 absorbs it).
 
 ## 📝 Session Log (newest first)
+
+### 2026-07-02 — FINAL GRADED RUN SENT (Claude, main chat)
+- User approved self-score 93 + authorized the send; rmisegal@gmail.com added as
+  GitHub collaborator by user.
+- VERIFIED: final run vs public Render servers — cop 5 : thief 1 (105:35 points),
+  195 turns, ONE technical loss (180s turn timeout) voided and re-run mid-series
+  exactly per spec; email SENT to rmisegal+uoh26b@gmail.com, Gmail id 19f2421cc04ea7c1.
+- Transcript archived: `artifacts/transcripts/final_graded_run_transcript.md`
+  (+ logs run_20260702_212658*, PNGs). dry_run flipped back to true post-send.
+- Tagged `submission-hw6`, pushed. Left for user: moamteam-ex06.pdf on Moodle (score 93).
 
 ### 2026-07-02 — CLOUD LIVE: deploy + public verify + cloud E2E (Claude, main chat)
 - User added RENDER_API_KEY to .env → `scripts/render_deploy.py` created both services

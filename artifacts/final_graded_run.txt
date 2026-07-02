@@ -1,0 +1,12 @@
+MCP handshakes complete
+pygame-ce 2.5.7 (SDL 2.32.10, Python 3.12.13)
+  sub-game 1: cop wins (capture, 22 rounds, 1 barriers)
+  sub-game 2: cop wins (capture, 19 rounds, 0 barriers)
+  sub-game 3: thief wins (move_limit, 25 rounds, 0 barriers)
+technical loss (voided): turn timeout (180s)
+  sub-game 4: cop wins (capture, 3 rounds, 0 barriers)
+  sub-game 5: cop wins (capture, 8 rounds, 0 barriers)
+  sub-game 6: cop wins (capture, 1 rounds, 0 barriers)
+series complete: cop 105 — thief 35 (1 technical losses voided) · logs: 
+artifacts/logs/run_20260702_212658_turns.jsonl
+report sent: 19f2421cc04ea7c1

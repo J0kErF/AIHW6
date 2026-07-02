@@ -55,11 +55,11 @@
 ## P9 — Submission
 - [x] README.md scientific report v1 (abstract, Dec-POMDP, challenges w/ real data, experiments, proofs) — refresh cloud section after P7
 - [x] Artifacts: GUI PNGs (13), transcripts (2 real runs), sweep+Q-learn plots, security battery output; cloud CLI logs pending P7
-- [ ] GRADING_RUBRIC self-audit — every box, target ≥98
-- [ ] Final autonomous run → real email to rmisegal+uoh26b@gmail.com
-- [ ] Push to GitHub repo (URL from user), share with rmisegal@gmail.com (standing instruction #1)
-- [ ] Repo contains PRD/PLAN/TODO markdown folder + root README (standing instruction — submit.txt)
+- [x] GRADING_RUBRIC self-audit complete; approved self-score: **93** (user, 2026-07-02)
+- [x] FINAL GRADED RUN sent 2026-07-02: cop 105:35, 6 valid sub-games (1 tech loss voided), Gmail id 19f2421cc04ea7c1
+- [x] Pushed to https://github.com/J0kErF/AIHW6; rmisegal@gmail.com added as collaborator (user, 2026-07-02)
+- [x] Repo contains PRD/PLAN/TODO markdowns (docs/ + plan/) + root README (standing instruction satisfied)
 - [ ] Fill submission PDF template per member (`moamteam-ex06.pdf`), honest self-score
-- [ ] Tag `submission-hw6`
+- [x] Tagged `submission-hw6`
 
 ## P10 — Bonus — ~~WAIVED~~ (window closed for students; tasks dropped)
