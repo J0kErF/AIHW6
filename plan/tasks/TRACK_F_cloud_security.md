@@ -12,9 +12,9 @@ operations with another team.
 - [ ] F1. Choose platform + create account: try **Prefect Cloud** (spec's example) first;
        fallbacks: Render → Fly.io → Railway; document choice + constraints in
        `docs/RUNBOOK_cloud.md` (you create it).
-- [ ] F2. Token scheme: generate strong bearer tokens per role; storage (.env/platform
+- [x] F2. Token scheme: generate strong bearer tokens per role; storage (.env/platform
        secrets); rotation=revoke drill written down.
-- [ ] F3. Draft `deploy/` scripts/Dockerfile (uv-based image) targeting the chosen platform;
+- [x] F3. Draft `deploy/` scripts/Dockerfile (uv-based image) targeting the chosen platform;
        confirm Track B code has no localhost assumptions.
 
 ## Tasks (post SP-3)

@@ -1,0 +1,22 @@
+# Render.com blueprint: deploys both MCP servers from this repo (docs/RUNBOOK_cloud.md).
+services:
+  - type: web
+    name: hw6-cop-mcp
+    runtime: docker
+    dockerfilePath: ./deploy/Dockerfile
+    plan: free
+    envVars:
+      - key: MCP_ROLE
+        value: cop
+      - key: MCP_COP_TOKEN
+        sync: false # set in dashboard; rotation = revoke
+  - type: web
+    name: hw6-thief-mcp
+    runtime: docker
+    dockerfilePath: ./deploy/Dockerfile
+    plan: free
+    envVars:
+      - key: MCP_ROLE
+        value: thief
+      - key: MCP_THIEF_TOKEN
+        sync: false

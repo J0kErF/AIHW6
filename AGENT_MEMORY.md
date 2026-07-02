@@ -61,7 +61,10 @@
 | Track C — agents/orchestrator | ✅ core done — 14 tests + REAL DeepSeek 2×2 series (0 tech losses/fallbacks); open: real-LLM 3×3–5×5 runs, optional Q-learn | 2026-07-02 |
 | Track D — GUI | 🔵 core done (render/PNG/replay-roundtrip, 4 tests); live window + pause/step + replay CLI pending | 2026-07-02 |
 | Track E — reporting/Gmail | 🔵 code done (5 tests, schemas byte-match spec); E1 Google Cloud setup MANUAL, not done | 2026-07-02 |
-| Track F — cloud deploy | ⬜ not started (gate: SP-3) | — |
+| Track F — cloud deploy | 🔵 fully scripted (Dockerfile+render.yaml+runbook+verify battery passed locally); BLOCKED on user: Render account (~2 min) | 2026-07-02 |
+| Real-LLM 5×5 rehearsal over :8001/:8002 | ✅ cop 90 : thief 40, 166 turns, 0 tech losses | 2026-07-02 |
+| Analysis: vision sweep + Q-learn curve | ✅ `artifacts/analysis/` | 2026-07-02 |
+| README scientific report | ✅ v1 complete with real data (refresh cloud §6 after deploy) | 2026-07-02 |
 | Local E2E (SP-3) | ⬜ | — |
 | Cloud E2E + evidence | ⬜ | — |
 | README scientific report | 🟡 skeleton only | 2026-07-02 |
@@ -98,17 +101,35 @@
 
 ## ▶️ Next Actions (whoever reads this next)
 
-1. **Wave 3 = Track F prep + rehearsals**: (a) real-LLM 5×5 series over real localhost
-   ports :8001/:8002 (not --in-memory) — the pre-cloud rehearsal; (b) 4×4 vision-radius
-   sweep for the README ambiguity analysis; (c) pick cloud platform + deploy (PRD_cloud_security).
-2. **E1 with the user** (browser, ~15 min): Google Cloud project + OAuth client + test
-   users per `docs/ENVIRONMENT.md` §5, then `uv run python -m src.reporting.smoke`
-   (draft mode). Blocks the final email step only.
-3. Optional differentiators when time allows: Q-learning module (C6) + learning curve;
-   pause/step GUI controls (D5).
-4. After each session: tick track boxes, update TASK_BOARD + this file.
+Only TWO user-manual steps remain; everything else is scripted:
+1. **USER: Render.com account** (~2 min, GitHub login) → follow `docs/RUNBOOK_cloud.md`
+   §1 (Blueprint deploy from repo → set 2 token env vars → paste 2 URLs into config.json)
+   → then run `uv run python scripts/cloud_verify.py` and
+   `uv run python -m src.orchestrator --no-email` (cloud E2E) — archive outputs.
+2. **USER: Google Cloud OAuth** (~15 min, browser): `docs/ENVIRONMENT.md` §5 → download
+   credentials.json → set GOOGLE_CREDENTIALS_PATH/GOOGLE_TOKEN_PATH in .env → run
+   `uv run python -m src.reporting.smoke` (creates a DRAFT; browser consent once).
+3. After both: refresh README §6 cloud lines, GRADING_RUBRIC self-audit, final graded
+   run with dry_run=false, push to the user-provided GitHub URL, share with
+   rmisegal@gmail.com, fill moamteam-ex06.pdf.
 
 ## 📝 Session Log (newest first)
+
+### 2026-07-02 — Wave 3: rehearsal, analysis, cloud kit, README (Claude, main chat)
+- VERIFIED: real-LLM 5×5 series over REAL HTTP servers :8001/:8002 — cop 4 : thief 2
+  (two thief move-limit escapes, one barrier), totals 90:40, 166 turns, 0 technical
+  losses, 2 guarded fallbacks, 166/166 verify_state OK. Transcript (mean belief err 0.89,
+  35% exact inference): `artifacts/transcripts/deepseek_5x5_transcript.md`; 6 PNGs.
+  Gotcha fixed en route: config MCP URLs needed the `/mcp` path suffix (FastMCP default).
+- VERIFIED: vision-radius sweep (mock agents, 12 games/cell): belief err 5×5
+  1.61→0.75→0.12→0 for r=1..4; CSV+plot in `artifacts/analysis/`.
+- VERIFIED: tabular Q-learning (C6): 2000 self-play episodes, mean reward 6.81→14.81;
+  curve PNG + qtable .npy + QPolicy class (`src/agents/qlearn.py`).
+- Cloud kit prepared (F2/F3): `deploy/Dockerfile`+`entrypoint.py`, `render.yaml`
+  blueprint, `docs/RUNBOOK_cloud.md`, `scripts/cloud_verify.py` (battery PASSED against
+  live local servers — evidence `artifacts/security/cloud_verify_20260702_133253.txt`).
+- README rewritten as full scientific report v1 with all real numbers.
+- 50 tests green; matplotlib added. Remaining manual: Render account, Google OAuth.
 
 ### 2026-07-02 — Wave 2: Track C + DeepSeek (Claude, main chat)
 - Built `src/agents/` (llm_adapter with anthropic/deepseek/openai/mock providers, persona

@@ -1,0 +1,17 @@
+cloud_verify @ 2026-07-02 13:32:51
+
+=== cop @ http://127.0.0.1:8001/mcp
+OK  : wrong token rejected (ToolError)
+OK  : handshake session 5xs-lRC0...
+OK  : game config {'server_role': 'cop', 'grid_size': [5, 5], 'max_moves': 25, 'num_games': 6, 'max_barriers': 5}
+OK  : 50 messages, order preserved, 0.6s round-trip
+OK  : verify_state {'ok': True, 'expected_turn': 49}
+
+=== thief @ http://127.0.0.1:8002/mcp
+OK  : wrong token rejected (ToolError)
+OK  : handshake session TxbPs38_...
+OK  : game config {'server_role': 'thief', 'grid_size': [5, 5], 'max_moves': 25, 'num_games': 6, 'max_barriers': 5}
+OK  : 50 messages, order preserved, 0.6s round-trip
+OK  : verify_state {'ok': True, 'expected_turn': 49}
+
+ALL CHECKS PASSED

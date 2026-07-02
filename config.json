@@ -33,8 +33,8 @@
   "mcp": {
     "cop_port": 8001,
     "thief_port": 8002,
-    "cop_url": "http://127.0.0.1:8001",
-    "thief_url": "http://127.0.0.1:8002",
+    "cop_url": "http://127.0.0.1:8001/mcp",
+    "thief_url": "http://127.0.0.1:8002/mcp",
     "token_env_cop": "MCP_COP_TOKEN",
     "token_env_thief": "MCP_THIEF_TOKEN"
   },

@@ -21,16 +21,16 @@ language over MCP, inferring positions under partial observability, acting legal
        interpretation (LLM-extracted hints), 1-step motion constraint; expose accuracy metric.
 - [x] C5. `agents/strategy.py` — heuristic baseline (Chebyshev pursuit/evasion + barrier
        value); legality guard using `Engine.legal_actions`.
-- [ ] C6. `agents/qlearn.py` — optional Tabular Q-Learning (Bellman, ε-greedy, params from
+- [x] C6. `agents/qlearn.py` — optional Tabular Q-Learning (Bellman, ε-greedy, params from
        config); self-play trainer; learning-curve CSV export. (Differentiator — do after C8.)
 - [x] C7. `orchestrator.py` — full loop: handshake both servers → per-turn
        (receive msg → LLM decide → validate → apply → send msg → GUI event → verify_state)
        → sub-game end → series accounting → Reporter trigger. Turn timeout + technical-loss
        voiding. CLI flags: `--config --grid --mock-llm --dry-run`.
-- [ ] C8. E2E local: mock-LLM 2×2 (ladder 1) → real LLM 3×3 (ladder 2) → 4×4 ambiguity run
+- [x] C8. E2E local: mock-LLM 2×2 (ladder 1) → real LLM 3×3 (ladder 2) → 4×4 ambiguity run
        (ladder 3, log belief accuracy vs vision radius) → 5×5 full series (ladder 4).
-- [ ] C9. Capture a transcript showing deception + successful inference → `artifacts/transcripts/`.
-- [ ] C10. **Post SP-3 GREEN** on TASK_BOARD (unblocks Track F).
+- [x] C9. Capture a transcript showing deception + successful inference → `artifacts/transcripts/`.
+- [x] C10. **Post SP-3 GREEN** on TASK_BOARD (unblocks Track F).
 
 ## Definition of Done
 `uv run python -m src.orchestrator --config config.json` completes 6 valid sub-games
