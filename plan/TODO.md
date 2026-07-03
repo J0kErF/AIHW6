@@ -6,7 +6,7 @@
 - [x] plan/: PLAN, TODO, TASK_BOARD, 6 track files
 - [x] config.json initial (all spec parameters)
 - [x] `git init` + foundation commit (LOCAL only — user provides GitHub repo URL at the end, then push)
-- [x] Real student names/ids in config.json + REPORTING_SPEC (from moamteam-ex05: Mohammad Yosef [REDACTED], Amear Abu Farekh [REDACTED])
+- [x] Real student names/ids in config.json + REPORTING_SPEC (from moamteam-ex05: Mohammad Yosef , Amear Abu Farekh )
 - [x] Bonus decision: **WAIVED** — bonus window closed for students; P10 dropped
 - [x] Repo confirmed + pushed: https://github.com/J0kErF/AIHW6 (origin/main tracking)
 

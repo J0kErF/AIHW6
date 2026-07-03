@@ -161,5 +161,5 @@ Secrets (gitignored `.env`): `DEEPSEEK_API_KEY`, `MCP_COP_TOKEN`, `MCP_THIEF_TOK
 
 | Student | ID |
 |---|---|
-| Mohammad Yosef | [REDACTED] |
-| Amear Abu Farekh | [REDACTED] |
+| Mohammad Yosef |  |
+| Amear Abu Farekh |  |

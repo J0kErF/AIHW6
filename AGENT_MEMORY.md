@@ -38,7 +38,7 @@
 
 ## 📌 Ground Truth (user-provided facts — highest authority)
 
-- Team: **moamteam** — Mohammad Yosef ([REDACTED]), Amear Abu Farekh ([REDACTED]).
+- Team: **moamteam** — Mohammad Yosef, Amear Abu Farekh.
 - Assignment: ex06 "Dual AI agent race via MCP servers" (spec PDF in parent folder).
 - Grade target: **98%** → treat spec "recommended" items as mandatory (see `docs/GRADING_RUBRIC.md`).
 - **Bonus is WAIVED** (window closed for students — user confirmed 2026-07-02). Do not build bonus features.

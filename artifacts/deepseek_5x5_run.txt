@@ -12,8 +12,8 @@ email skipped (--no-email); report body follows
 {
   "group_name": "moamteam",
   "students": [
-    "Mohammad Yosef ([REDACTED])",
-    "Amear Abu Farekh ([REDACTED])"
+    "Mohammad Yosef",
+    "Amear Abu Farekh"
   ],
   "github_repo": "https://github.com/J0kErF/AIHW6",
   "cop_mcp_url": "http://127.0.0.1:8001/mcp",

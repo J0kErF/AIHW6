@@ -9,7 +9,7 @@
 ```json
 {
   "group_name": "moamteam",
-  "students": ["Mohammad Yosef ([REDACTED])", "Amear Abu Farekh ([REDACTED])"],
+  "students": ["Mohammad Yosef", "Amear Abu Farekh"],
   "github_repo": "https://github.com/J0kErF/AIHW6",
   "cop_mcp_url": "https://<cop-public-url>",
   "thief_mcp_url": "https://<thief-public-url>",
