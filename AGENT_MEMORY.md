@@ -216,3 +216,11 @@ if the grader probes; turn_timeout_s=180 absorbs it).
 - Filled team identity from `moamteam-ex05.pdf`; waived bonus everywhere; git init on
   `main`, commit `f4e7a47` (27 files). VERIFIED via `git log`.
 - No source code exists yet — `src/`, `tests/`, `pyproject.toml` are still to be created.
+
+### 2026-07-03 — Privacy scrub: student IDs removed from repo + full git history
+- User request: IDs are private, live only in the Moodle PDF. Removed from all 8 tracked
+  files (config, README, REPORTING_SPEC, TODO, AGENT_MEMORY, 3 run artifacts) AND from
+  every historical commit via `uvx git-filter-repo --replace-text` (IDs -> [REDACTED]).
+- Force-pushed rewritten main + submission-hw6 tag (new head 0a2d5b3). VERIFIED:
+  `git log --all -S <id>` returns nothing for both IDs. Personal memory scrubbed too.
+- NEVER re-add ID numbers to any file in this repo. Names only.
